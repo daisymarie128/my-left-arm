@@ -1,0 +1,211 @@
+/* -------------------------
+
+  I'd give my left to work for you.
+  This is a quick site built to send to potential employers where I really want to work.
+
+---------------------------- */
+
+@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:200,400,700);
+
+html, body {
+  font-size: 10px;
+  margin: 0;
+  font-family: 'Source Code Pro', monospace;
+}
+
+#container {
+  width: 100%;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/*----------------------
+
+  Styles for general page layout and items on the page
+
+----------------------*/
+.heading, .copyright, .portfolio-link, .twitter {
+  /*width: calc(100% - 40px);;
+  height: calc(100vh - 40px);*/
+  position: absolute;
+  /*z-index: 1;*/
+  font-size: 1rem;
+  font-weight: 200;
+  color: #ffffff;
+  margin: 20px;
+}
+
+.heading {
+  font-size: 1.4rem;
+}
+
+.portfolio-link {
+  top: 25px;
+  font-weight: 400;
+}
+
+.copyright {
+  position: absolute;
+  bottom: 0;
+}
+
+.twitter {
+  width: 40px;
+  height: 40px;
+  background-image: url('assets/twitter-bw.png');
+  background-size: cover;
+  bottom: 0;
+  right: 0;
+}
+
+
+/*----------------------
+
+  Styles for the info pop over
+
+----------------------*/
+#info-btn {
+  position: absolute;
+  top: 65px;
+  left: 20px;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+#info-pop-out {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: #000000;
+  color: #ffffff;
+  opacity: 0.9;
+  display: none;
+}
+
+.show {
+  display: block !important;
+}
+
+#close {
+  position: absolute;
+  right: 40px;
+  top: 40px;
+  font-size: 1.5rem;
+}
+
+#pop-out-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate( -50%, -50%);
+  font-size: 1.4rem;
+}
+
+#pop-out-text .portfolio-link{
+  position: relative;
+  top: 0;
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+
+/*----------------------
+
+  Styles for the xray
+  this is what is doing the image reveal
+
+----------------------*/
+.reveal, .arm-xray{
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  /*background-size: 40% cover;*/
+  /*background-size: contain;*/
+  background-size: 100%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+}
+
+.reveal {
+  background-image: url("assets/arm.JPG");
+}
+
+.arm-xray{
+  background-image: url("assets/xray-01.jpg");
+  background-color: #000000;
+}
+
+.reveal {
+  width: 160px;
+  height: 160px;
+  position: absolute;
+  top: 25%;
+  left: 40%;
+  /*border-radius: 50%;*/
+  border: 1px solid white;
+  background-size: 128%;
+  cursor: none;
+  background-position-y: -432px;
+  background-position-x: -45px;
+}
+
+/*--------------------------
+
+    Mobile Styles
+
+-------------------------*/
+#rotate-banner {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  border: 0;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+}
+
+#rotate-banner h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  transform: translate(-50%, -50%);
+  font-weight: 200;
+  font-size: 2.3rem;
+}
+
+#rotate-banner h2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  transform: translate(-50%, 251%);
+  font-weight: 200;
+}
+
+
+@media screen and (min-height: 475px) and (orientation: portrait) {
+  #rotate-banner {
+    display: block;
+  }
+}
+
+/* ---------------------------------------------
+
+  Could be a mobile, so show the rotate screen
+
+--------------------------------------------- */
+@media screen and (max-height: 475px) and (orientation: landscape) {
+  #rotate-banner {
+    display: block;
+  }
+}
