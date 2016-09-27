@@ -45,6 +45,7 @@ a {
 .portfolio-link {
   top: 25px;
   font-weight: 400;
+  font-size: 1.2rem;
 }
 
 .copyright {
@@ -108,7 +109,6 @@ a {
   position: relative;
   top: 0;
   margin: 0;
-  font-size: 1.2rem;
 }
 
 
