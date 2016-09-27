@@ -92,6 +92,11 @@ a {
   display: none;
 }
 
+#info-pop-out i{
+  font-size: 0.9rem;
+  margin-top: 20px;
+}
+
 .show {
   display: block !important;
 }
