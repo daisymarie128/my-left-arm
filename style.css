@@ -50,6 +50,10 @@ a {
   text-transform: uppercase;
 }
 
+.portfolio-link:hover {
+  color: #0beaa6;
+}
+
 .copyright {
   position: absolute;
   bottom: 0;
@@ -208,10 +212,11 @@ a {
 
 #rotate-banner h1, #rotate-banner h2 {
   font-weight: 200;
+  font-size: 2.3rem;
 }
 
-#rotate-banner h1 {
-  font-size: 2.3rem;
+#rotate-banner h2 {
+  font-size: 1.9rem;
 }
 
 #rotate-banner a {
@@ -222,6 +227,7 @@ a {
   font-size: 1.8rem;
   display: block;
   margin-bottom: 15px;
+  text-transform: lowercase;
 }
 
 
