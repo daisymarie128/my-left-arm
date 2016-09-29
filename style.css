@@ -94,6 +94,15 @@ a {
   padding: 4px 12px;
 }
 
+#info-btn:hover {
+  background-color: #0beaa6;
+  color: #ffffff;
+}
+
+#close:hover {
+  color: #0beaa6;
+}
+
 #info-pop-out {
   position: relative;
   width: 100%;
