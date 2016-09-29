@@ -1,40 +1,33 @@
 /* -------------------------
 
   I'd give my left to work for you.
-  This is a quick site built to send to potential employers where I really want to work.
+  This is a quick website built for potential employers I'd really like to work with.
   This file simply listens to the mouse movement and updates the css accordingly.
 
 ---------------------------- */
 
+var container,
+    reveal,
+    infoBtn,
+    closeBtn,
+    infoPopOut;
 
+reveal = document.getElementsByClassName('reveal')[0];
+infoBtn = document.getElementById('info-btn');
+closeBtn = document.getElementById('close');
+infoPopOut = document.getElementById('info-pop-out');
+document.addEventListener('mousemove', function (ev) {
+    reveal.style.top = ev.clientY - 65 + 'px';
+    return reveal.style.left = ev.clientX - 65 + 'px';
+});
 
-// (function () {
-    var container,
-        reveal,
-        infoBtn,
-        closeBtn,
-        infoPopOut;
+infoBtn.addEventListener('click', function() {
+  infoPopOut.classList.add('show');
+});
 
-    reveal = document.getElementsByClassName('reveal')[0];
-    infoBtn = document.getElementById('info-btn');
-    closeBtn = document.getElementById('close');
-    infoPopOut = document.getElementById('info-pop-out');
-    document.addEventListener('mousemove', function (ev) {
-        reveal.style.top = ev.clientY - 65 + 'px';
-        return reveal.style.left = ev.clientX - 65 + 'px';
-    });
-
-    infoBtn.addEventListener('click', function() {
-      infoPopOut.classList.add('show');
-    });
-
-    closeBtn.addEventListener('click', function() {
-      infoPopOut.classList.remove('show');
-    });
-
-
-
-// }.call(this));
+closeBtn.addEventListener('click', function() {
+  infoPopOut.classList.remove('show');
+});
 
 
 // this is for a future version on mobile

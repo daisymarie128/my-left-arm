@@ -1,7 +1,7 @@
 /* -------------------------
 
   I'd give my left to work for you.
-  This is a quick site built to send to potential employers where I really want to work.
+  This is a quick website built for potential employers I'd really like to work with.
 
 ---------------------------- */
 
@@ -28,10 +28,7 @@ a {
 
 ----------------------*/
 .heading, .copyright, .portfolio-link, .twitter {
-  /*width: calc(100% - 40px);;
-  height: calc(100vh - 40px);*/
   position: absolute;
-  /*z-index: 1;*/
   font-size: 1rem;
   font-weight: 200;
   color: #ffffff;
@@ -152,7 +149,7 @@ a {
 
 /*----------------------
 
-  Styles for the xray
+  Styles for the x-ray
   this is what is doing the image reveal
 
 ----------------------*/
@@ -160,8 +157,6 @@ a {
   width: 100%;
   height: 100vh;
   position: absolute;
-  /*background-size: 40% cover;*/
-  /*background-size: contain;*/
   background-size: 100%;
   background-attachment: fixed;
   background-repeat: no-repeat;
