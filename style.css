@@ -13,13 +13,25 @@ html, body {
   font-family: 'Source Code Pro', monospace;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 #container {
   width: 100%;
+  background-color: black;
+  height: 100vh;
+  overflow: hidden;
+  position: fixed;
 }
 
 a {
   color: #ffffff;
   text-decoration: none;
+}
+
+.error {
+  font-weight: 400;
 }
 
 /*----------------------
@@ -37,6 +49,7 @@ a {
 
 .heading {
   font-size: 1.4rem;
+  top: 0;
 }
 
 .portfolio-link {
@@ -108,6 +121,7 @@ a {
   color: #ffffff;
   opacity: 0.9;
   display: none;
+  z-index: 2;
 }
 
 #info-pop-out i{
@@ -121,10 +135,11 @@ a {
 
 #close {
   position: absolute;
-  right: 40px;
-  top: 40px;
+  right: 30px;
+  top: 30px;
   font-size: 1.5rem;
   cursor: pointer;
+  padding: 10px;
 }
 
 #pop-out-text {
@@ -153,44 +168,35 @@ a {
   this is what is doing the image reveal
 
 ----------------------*/
-.reveal, .arm-xray{
+#reveal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate( -50%, -50%);
+  margin: 0;
+  height: auto;
   width: 100%;
-  height: 100vh;
-  position: absolute;
-  background-size: 100%;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-position: center center;
-
+  background: url('assets/xray-02.jpg') no-repeat;
+  background-size: 100% auto;
 }
 
-.reveal {
-  background-image: url("assets/arm-hiremeplease.jpg");
-}
-
-.arm-xray{
-  background-image: url("assets/xray-02.jpg");
-  background-color: #000000;
-}
-
-.reveal {
-  width: 160px;
-  height: 160px;
-  position: absolute;
-  top: 25%;
-  left: 40%;
-  /*border-radius: 50%;*/
-  border: 1px solid white;
-  background-size: 100%;
+#xray{
+  width: 100%;
+  margin: 0;
+  mask-image: url('assets/xray-02.jpg');
+  -webkit-mask-image: url('assets/xray-02.jpg');
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 150px 150px;
   cursor: none;
 }
+
 
 /*--------------------------
 
     Mobile Styles
 
 -------------------------*/
-#rotate-banner {
+#rotate-banner, #error-banner {
   display: none;
   width: 100%;
   height: 100%;
@@ -204,7 +210,7 @@ a {
   text-align: center;
 }
 
-#rotate-banner #mobile-content {
+#rotate-banner #mobile-content, #error-banner #mobile-content {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -214,18 +220,18 @@ a {
   font-size: 2.3rem;
 }
 
-#rotate-banner h1, #rotate-banner h2 {
+#rotate-banner h1, #rotate-banner h2, #error-banner h1, #error-banner h2 {
   font-weight: 200;
   font-size: 2.3rem;
   text-align: left;
 }
 
-#rotate-banner h2 {
+#rotate-banner h2, #error-banner h2 {
   font-size: 1.8rem;
   margin-top: 25px;
 }
 
-#rotate-banner a {
+#rotate-banner a, #error-banner a {
   text-align: left;
   position: relative;
   top: 0;
@@ -237,7 +243,7 @@ a {
   text-transform: lowercase;
 }
 
-#rotate-banner a:first-of-type {
+#rotate-banner a:first-of-type, #error-banner a:first-of-type {
   margin-top: 70px;
   text-transform: uppercase;
 }
@@ -254,7 +260,15 @@ a {
 
 --------------------------------------------- */
 @media screen and (max-height: 475px) and (orientation: landscape) {
+  html {
+    font-size: 8px;
+  }
+
   #rotate-banner {
-    display: block;
+    display: none;
+  }
+
+  #pop-out-text {
+    width: 85%;
   }
 }
